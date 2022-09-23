@@ -36,21 +36,3 @@ class DataStore {
         
         private init() {}
 }
-
-class PersonManager {
-    static let shared = PersonManager()
-    let dataStore = DataStore.shared
-    
-    private init() {}
-    
-    func addPerson(firstName: String, secondName:String, email: String, phoneNumber: String) {
-        if !dataStore.emails.contains(email) {
-            dataStore.firstNames.append(firstName)
-            dataStore.secondNames.append(secondName)
-            dataStore.emails.append(email)
-            dataStore.phoneNumbers.append(phoneNumber)
-            print("Person: \(firstName) \(secondName) was added \n")
-        }
-        print("Person: \(firstName) \(secondName) has already available \n")
-    }
-}
